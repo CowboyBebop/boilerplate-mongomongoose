@@ -15,7 +15,7 @@
 // mongoose.connect(<Your URI>, { useNewUrlParser: true, useUnifiedTopology: true }); 
 
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGO_URI);
+mongoose.connect("mongodb+srv://Bebop:BDSpikeSpiegel@codecluster-6ufys.mongodb.net/CodeCluster?retryWrites=true&w=majority");
 
 
 /** # SCHEMAS and MODELS #
