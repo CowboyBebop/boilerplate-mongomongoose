@@ -209,19 +209,19 @@ var findEditThenSave = function(personId, done) {
   var foodToAdd = 'hamburger';
   
   //find by id
+  let personData;
   
   personToUpdate = Person.findById(personId,(err,data) =>{
     if(err) return console.log(err);
 
-   
-    
+    personData = data;
+  
   });
   
-  let personData = data;
 
   personData.favoriteFoods.push(foodToAdd);
 
-  personData.save((err,data) =>{
+  personToUpdate.save((err,data) =>{
     if(err) return console.log(err);
     done(null,data);
   });
