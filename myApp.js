@@ -263,7 +263,7 @@ var removeById = function(personId, done) {
     data.save(function(err, data){
       done(null, data);
     });
-    done();
+    done(null, data);
   });
     
 };
