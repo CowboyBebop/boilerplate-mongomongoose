@@ -211,16 +211,18 @@ var findEditThenSave = function(personId, done) {
   //find by id
   personToUpdate = Person.findById(personId,(err,data) =>{
     if(err) return console.log(err);
-    data.favoriteFoods.push(foodToAdd);
-    done(null,data)
-  });
-  
-  //add food
-  //personToUpdate.favoriteFoods.push(foodToAdd);
-  //save
-  personToUpdate.save((err,data) =>{
-    if(err) return console.log(err);
-    done(null,data)
+
+    data.update(data.favoriteFoods.push(foodToAdd),(err,data) =>{
+      if(err) return console.log(err);
+      done(null,data);
+    });
+    
+    data.save((err,data) =>{
+      if(err) return console.log(err);
+      done(null,data)
+    });
+
+    done(null,data);
   });
 
   done(null/*, data*/);
