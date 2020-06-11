@@ -258,7 +258,12 @@ var findAndUpdate = function(personName, done) {
 
 var removeById = function(personId, done) {
   
-  done(null/*, data*/);
+  Person.findByIdAndRemove(personId,(err,data) => {
+    if(err) return console.log(err);
+    data.save(function(err, data){
+      done(null, data);
+    });
+  });
     
 };
 
