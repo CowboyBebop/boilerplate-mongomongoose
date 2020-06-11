@@ -281,7 +281,14 @@ var removeById = function(personId, done) {
 var removeManyPeople = function(done) {
   var nameToRemove = "Mary";
 
-  done(null/*, data*/);
+  Person.Remve({name: nameToRemove},(err,data) => {
+    if(err) return console.log(err);
+    data.save(function(err, data){
+      done(null, data);
+    });
+    done(null, data);
+  });
+  
 };
 
 /** # C[R]UD part V -  More about Queries # 
