@@ -209,35 +209,31 @@ var findEditThenSave = function(personId, done) {
   var foodToAdd = 'hamburger';
   
   //find by id
-  /*
+  
   personToUpdate = Person.findById(personId,(err,data) =>{
     if(err) return console.log(err);
 
     data.update({}, {favoriteFoods: data.favoriteFoods.push(foodToAdd)},(err,data) =>{
       if(err) return console.log(err);
-      done(null,data);
     });
     
     data.save((err,data) =>{
       if(err) return console.log(err);
-      done(null,data)
     });
-
-    if(err) return console.log(err);
 
     done(null,data);
   });
+  
+  /*
+  Person.findById(personId, function(err, data){
+    data.favoriteFoods.push(foodToAdd);
+    console.log(data);
+    data.save(function(err, data){
+      done(null, data);
+  });  
   */
 
- Person.findById(personId, function(err, data){
-    
-  data.favoriteFoods.push(foodToAdd);
-  console.log(data);
-  data.save(function(err, data){
-    done(null, data);
-  });  
-  
-});
+
 };
 
 /** 9) New Update : Use `findOneAndUpdate()` */
