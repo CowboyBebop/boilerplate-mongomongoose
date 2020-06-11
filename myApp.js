@@ -205,34 +205,16 @@ var findPersonById = function(personId, done) {
 // manually mark it as edited using `document.markModified('edited-field')`
 // (http://mongoosejs.com/docs/schematypes.html - #Mixed )
 
-var findEditThenSave = function(personId, done) {
-  var foodToAdd = 'hamburger';
-  
-  //find by id
-  let personData;
-  
-  personToUpdate = Person.findById(personId,(err,data) =>{
-    if(err) return console.log(err);
-    personData = data;
-  });
-  
 
-  console.log(personData);
-  personData.favoriteFoods.push(foodToAdd);
 
-  personData.save((err,data) =>{
-    if(err) return console.log(err);
-    done(null,data);
-  });
-
-  /*
+  
   Person.findById(personId, function(err, data){
     data.favoriteFoods.push(foodToAdd);
-    console.log(data);
+    
     data.save(function(err, data){
       done(null, data);
   });  
-  */
+  
 
 
 };
