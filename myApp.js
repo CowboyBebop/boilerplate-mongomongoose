@@ -211,7 +211,7 @@ var findEditThenSave = function(personId, done) {
   Person.findById(personId, function(err, data){
 
     data.favoriteFoods.push(foodToAdd);
-    
+
     data.save(function(err, data){
       done(null, data);
     });  
@@ -237,7 +237,13 @@ var findEditThenSave = function(personId, done) {
 var findAndUpdate = function(personName, done) {
   var ageToSet = 20;
 
-  done(null/*, data*/);
+  Person.findOneAndUpdate({name: personName}, {age: ageToSet}, {new:true},(err,data) => {
+    if(err) return console.log(err);
+    data.save(function(err, data){
+      done(null, data);
+    });
+  });
+
 };
 
 /** # CRU[D] part IV - DELETE #
