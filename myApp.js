@@ -283,9 +283,9 @@ var removeManyPeople = function(done) {
 
   Person.remove({name: nameToRemove},(err) => {
     if(err) return console.log(err);
-    done();
-  });
-  done();
+    done(null);
+  }); 
+    done(null);
 };
 
 /** # C[R]UD part V -  More about Queries # 
