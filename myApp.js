@@ -225,7 +225,6 @@ var findEditThenSave = function(personId, done) {
     done(null,data);
   });
 
-  done(null/*, data*/);
 };
 
 /** 9) New Update : Use `findOneAndUpdate()` */
