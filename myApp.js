@@ -281,7 +281,7 @@ var removeById = function(personId, done) {
 var removeManyPeople = function(done) {
   var nameToRemove = "Mary";
 
-  Person.deleteOne({name: nameToRemove},(err,data) => {
+  Person.deleteMany({name: nameToRemove},(err,data) => {
     if(err) return console.log(err);
     data.save(function(err, data){
       done(null, data);
