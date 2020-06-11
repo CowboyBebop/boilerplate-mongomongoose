@@ -205,18 +205,18 @@ var findPersonById = function(personId, done) {
 // manually mark it as edited using `document.markModified('edited-field')`
 // (http://mongoosejs.com/docs/schematypes.html - #Mixed )
 
-
-
+var findEditThenSave = function(personId, done) {
+  var foodToAdd = 'hamburger';
   
   Person.findById(personId, function(err, data){
+
     data.favoriteFoods.push(foodToAdd);
     
     data.save(function(err, data){
       done(null, data);
-  });  
-  
-
-
+    });  
+    
+  });
 };
 
 /** 9) New Update : Use `findOneAndUpdate()` */
