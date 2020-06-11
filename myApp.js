@@ -286,9 +286,8 @@ var removeManyPeople = function(done) {
     data.save(function(err, data){
       done(null, data);
     });
-    done(null, data);
   });
-  
+
 };
 
 /** # C[R]UD part V -  More about Queries # 
