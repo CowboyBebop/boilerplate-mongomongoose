@@ -213,9 +213,9 @@ var findEditThenSave = function(personId, done) {
   
   personToUpdate = Person.findById(personId,(err,data) =>{
     if(err) return console.log(err);
-
+    console.log(data);
     personData = data;
-  
+    console.log(personData);
   });
   
 
