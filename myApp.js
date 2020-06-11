@@ -284,6 +284,7 @@ var removeManyPeople = function(done) {
   Person.deleteMany({name: nameToRemove},(err,data) => {
     if(err) return console.log(err);
     data.save(function(err, data){
+      if(err) return console.log(err);
       done(null, data);
     });
     done(null, data);
