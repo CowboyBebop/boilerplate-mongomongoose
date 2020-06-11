@@ -263,7 +263,7 @@ var removeById = function(personId, done) {
     data.save(function(err, data){
       done(null, data);
     });
-    done(null, data);
+    done();
   });
     
 };
@@ -285,6 +285,7 @@ var removeManyPeople = function(done) {
     if(err) return console.log(err);
     done();
   });
+  done();
 };
 
 /** # C[R]UD part V -  More about Queries # 
