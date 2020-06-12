@@ -283,12 +283,9 @@ var removeManyPeople = function(done) {
 
   Person.deleteMany({name: nameToRemove},(err,data) => {
     if(err) return console.log(err);
-    data.save(function(err, data){
-      done(null, data);
-    });
     done(null, data);
   });
-  
+
 };
 
 /** # C[R]UD part V -  More about Queries # 
