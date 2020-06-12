@@ -309,7 +309,7 @@ var removeManyPeople = function(done) {
 var queryChain = function(done) {
   var foodToSearch = "burrito";
   
-  Person.find({favoriteFoods : foodToSearch},)
+  Person.find({favoriteFoods : foodToSearch})
   .sort('name').limit(2).select('name favoriteFoods')
   .exec((err,data) => {
     if(err) return console.log(err);
